@@ -1,0 +1,145 @@
+{{/* Shared snippets used by several pages. */}}
+
+{{define "arrow"}}<svg class="arrow" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>{{end}}
+
+{{define "tool-list"}}
+<ul {{if .}}aria-hidden="true"{{end}}>
+  <li>Kubernetes</li><li>*</li><li>Terraform</li><li>*</li><li>Docker</li><li>*</li>
+  <li>AWS</li><li>*</li><li>GitHub Actions</li><li>*</li><li>Prometheus</li><li>*</li>
+  <li>Grafana</li><li>*</li><li>Ansible</li><li>*</li><li>Go</li><li>*</li>
+  <li>PostgreSQL</li><li>*</li><li>Linux</li><li>*</li><li>Helm</li><li>*</li>
+</ul>
+{{end}}
+
+{{define "socials"}}
+<ul class="socials">
+  <li><a href="https://github.com/Haxor44" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+  </a></li>
+  <li><a href="https://www.linkedin.com/in/ryan-matibo-malekya" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+  </a></li>
+  <li><a href="https://medium.com/@evolmalek04" target="_blank" rel="noopener" aria-label="Medium" title="Medium">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><circle cx="6.5" cy="12" r="5.5"/><ellipse cx="16.3" cy="12" rx="2.8" ry="5.2"/><ellipse cx="21.6" cy="12" rx="1.1" ry="4.8"/></svg>
+  </a></li>
+</ul>
+{{end}}
+
+{{define "footer-landscape"}}
+<svg class="landscape" viewBox="0 -24 1440 284" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+  <!-- hills, back to front -->
+  <ellipse class="hill hill-1" cx="430" cy="300" rx="380" ry="240"/>
+  <ellipse class="hill hill-2" cx="940" cy="335" rx="580" ry="255"/>
+
+  <!-- trees on the left hill -->
+  <g class="trees">
+    <rect x="298" y="58" width="4" height="18"/><circle cx="300" cy="52" r="10"/><circle cx="293" cy="58" r="8"/><circle cx="307" cy="59" r="8"/>
+    <rect x="398" y="44" width="4" height="18"/><circle cx="400" cy="40" r="9"/><circle cx="394" cy="46" r="7"/><circle cx="406" cy="46" r="7"/>
+    <rect x="451" y="34" width="5" height="28"/><circle cx="453" cy="28" r="12"/><circle cx="445" cy="38" r="9"/><circle cx="462" cy="38" r="9"/><circle cx="453" cy="16" r="8"/>
+    <rect x="518" y="48" width="4" height="20"/><circle cx="520" cy="42" r="11"/><circle cx="513" cy="49" r="8"/><circle cx="528" cy="49" r="8"/>
+  </g>
+
+  <ellipse class="hill hill-3" cx="720" cy="390" rx="430" ry="245"/>
+
+  <!-- grass tufts -->
+  <g class="grass">
+    <path d="M178 260 L183 228 L186 260 Z M186 260 L194 222 L192 260 Z M192 260 L201 234 L197 260 Z M172 260 L176 238 L180 260 Z"/>
+    <path d="M1268 260 L1272 214 L1276 260 Z M1276 260 L1286 206 L1283 260 Z M1283 260 L1296 222 L1290 260 Z M1290 260 L1306 232 L1297 260 Z M1300 260 L1310 236 L1306 260 Z M1260 260 L1262 230 L1267 260 Z"/>
+  </g>
+
+  <!-- a perched bald eagle on a rock, top of the front hill -->
+  <g transform="translate(720 145)">
+    <path class="rock" d="M-34 2 C-30 -10 -18 -14 -4 -13 C10 -14 24 -10 30 2 Z"/>
+    <g transform="translate(-44 -128) scale(1.3)">
+      <path class="eagle-tail" d="M40 74 L57 92 L48 94 L33 79 Z"/>
+      <path class="eagle-body" d="M27 33 C15 43 15 62 25 74 C31 81 40 83 45 80 C49 69 47 50 40 40 Z"/>
+      <path class="eagle-wing" d="M33 39 C45 45 52 62 52 80 L41 81 C39 65 35 52 29 44 Z"/>
+      <path class="eagle-legs" d="M31 80 V89 M27 89 H35 M39 80 V89 M35 89 H43"/>
+      <g class="eagle-head">
+        <path class="eagle-white" d="M22 35 C17 27 21 16 31 15.5 C39 15 43 22 41 29 C39.5 34 34 37 27 37 Z"/>
+        <path class="eagle-beak" d="M23 21.5 C16 20.5 11 24 11.5 29.5 C13 27 15.5 26.5 18 27.5 L23.5 27 Z"/>
+        <circle class="eagle-eye" cx="25.5" cy="22.5" r="1.6"/>
+        <path class="eagle-brow" d="M22.5 20.3 L28.5 19.6"/>
+      </g>
+    </g>
+  </g>
+</svg>
+{{end}}
+
+{{define "cert-card"}}
+<article class="card cert-card{{if .IsInProgress}} cert-card-progress{{end}}">
+  <div class="cert-top">
+    {{if .BadgeIconURL}}<img class="cert-badge" src="{{.BadgeIconURL}}" alt="{{.Name}} badge" loading="lazy" width="64" height="64">{{else}}<span class="cert-fallback cert-fallback-lg">✦</span>{{end}}
+    {{if .IsInProgress}}<span class="tag tag-progress">In progress</span>{{else if .IsExpired}}<span class="tag tag-warn">Expired</span>{{else}}<span class="tag tag-ok">Earned</span>{{end}}
+  </div>
+  <h3>{{.Name}}</h3>
+  <p class="cert-org">{{.IssuingOrg}}</p>
+  {{if .IssueDate}}<p class="cert-date mono">issued {{.IssueDate.Format "2006"}}</p>{{else}}<p class="cert-date mono">studying now</p>{{end}}
+  {{if .CredentialURL}}<a class="link-arrow link-arrow-sm" href="{{.CredentialURL}}" target="_blank" rel="noopener">Verify credential {{template "arrow"}}</a>{{end}}
+</article>
+{{end}}
+
+{{define "project-card"}}
+<article class="card project-card">
+  <div class="card-media">
+    {{if .ImageURL}}
+    <img src="{{.ImageURL}}" alt="{{.Title}} screenshot" loading="lazy">
+    {{else}}
+    <div class="card-terminal" aria-hidden="true">
+      <span class="t-dots"><i></i><i></i><i></i></span>
+      <code><span class="t-prompt">~/projects $</span> deploy <span class="t-arg">{{.Title}}</span><br><span class="t-ok">✔ rollout complete</span>{{if .DeploymentPlatform}} <span class="t-dim">→ {{.DeploymentPlatform}}</span>{{end}}</code>
+    </div>
+    {{end}}
+  </div>
+  <div class="card-body">
+    <h3>{{.Title}}</h3>
+    <p>{{.Description}}</p>
+    <div class="tag-row">
+      {{range .TechStackList}}<span class="tag">{{.}}</span>{{end}}
+    </div>
+    <div class="card-links">
+      {{if .GithubURL}}<a href="{{.GithubURL}}" target="_blank" rel="noopener">GitHub {{template "arrow"}}</a>{{end}}
+      {{if .LiveURL}}<a href="{{.LiveURL}}" target="_blank" rel="noopener">Live {{template "arrow"}}</a>{{end}}
+      {{if .BlogURL}}<a href="{{.BlogURL}}" target="_blank" rel="noopener">Write-up {{template "arrow"}}</a>{{end}}
+      {{if .DeploymentPlatform}}<span class="deploy-tag">{{.DeploymentPlatform}}</span>{{end}}
+    </div>
+  </div>
+</article>
+{{end}}
+
+{{define "article-row"}}
+{{if .ExternalURL}}<a class="row-item" href="{{.ExternalURL}}" target="_blank" rel="noopener">{{else}}<div class="row-item">{{end}}
+  <time class="row-date" datetime="{{.PublishedAt.Format "2006-01-02"}}">{{.PublishedAt.Format "02.01.2006"}}</time>
+  <div class="row-main">
+    <h3>{{.Title}}</h3>
+    {{if .Summary}}<p>{{.Summary}}</p>{{end}}
+    <div class="tag-row tag-row-tight">
+      {{if .TagList}}{{range .TagList}}<span class="tag">{{.}}</span>{{end}}{{else}}<span class="tag">{{.Platform}}</span>{{end}}
+    </div>
+  </div>
+  {{if .ImageURL}}<img class="row-thumb" src="{{.ImageURL}}" alt="" loading="lazy">{{end}}
+  {{if .ExternalURL}}<span class="row-arrow">{{template "arrow"}}</span>{{end}}
+{{if .ExternalURL}}</a>{{else}}</div>{{end}}
+{{end}}
+
+{{define "article-card"}}
+<a class="card article-card" {{if .ExternalURL}}href="{{.ExternalURL}}" target="_blank" rel="noopener"{{end}}>
+  <div class="card-media">
+    {{if .ImageURL}}
+    <img src="{{.ImageURL}}" alt="" loading="lazy">
+    {{else}}
+    <div class="card-terminal" aria-hidden="true"><span class="t-dots"><i></i><i></i><i></i></span><code><span class="t-prompt">~/posts $</span> cat <span class="t-arg">latest.md</span></code></div>
+    {{end}}
+  </div>
+  <div class="card-body">
+    <h3>{{.Title}}</h3>
+    <p class="article-meta">
+      <time datetime="{{.PublishedAt.Format "2006-01-02"}}">{{.PublishedAt.Format "January 2, 2006"}}</time>
+      <span aria-hidden="true">•</span>
+      <span class="platform">{{.Platform}}</span>
+    </p>
+    {{if .Summary}}<p>{{.Summary}}</p>{{end}}
+    <span class="read-more">Read article {{template "arrow"}}</span>
+  </div>
+</a>
+{{end}}

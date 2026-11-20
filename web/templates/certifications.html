@@ -1,0 +1,25 @@
+<section class="container page-head">
+  <p class="section-num">~/<span>certifications</span></p>
+  <h1>Proof of <em>practice</em></h1>
+  <p class="lead">Professional certifications in cloud, containers, DevOps and AI, plus the ones I'm working towards right now.</p>
+</section>
+
+{{if .InProgress}}
+<section class="container section section-tight">
+  <h2 class="group-title"><span class="pulse-dot pulse-amber"></span> In progress</h2>
+  <div class="card-grid">
+    {{range .InProgress}}{{template "cert-card" .}}{{end}}
+  </div>
+</section>
+{{end}}
+
+<section class="container section section-tight">
+  <h2 class="group-title">Earned</h2>
+  {{if .Earned}}
+  <div class="card-grid">
+    {{range .Earned}}{{template "cert-card" .}}{{end}}
+  </div>
+  {{else}}
+  <p class="empty-state"><span class="mono">$ ls ~/certs</span><br>No certifications published yet.</p>
+  {{end}}
+</section>

@@ -1,0 +1,23 @@
+# Env
+.env
+*.env.local
+
+# Go
+/bin/
+/tmp/
+*.exe
+*.test
+*.out
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Local-only docs and files (not published)
+*.md
+!README.md
+*.pdf
+
+# Machine-specific compose overrides (e.g. the 5433 port fix)
+docker-compose.override.yml

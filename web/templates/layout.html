@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Title}} · Haxor44</title>
+  <meta name="description" content="DevOps & Cloud Infrastructure Engineer — projects, certifications, and writing on cloud infrastructure, containers, and CI/CD.">
+  <meta name="theme-color" content="#03071e">
+  <link rel="icon" href="/static/favicon.svg?v=1" type="image/svg+xml">
+  <link rel="icon" href="/static/favicon-32.png?v=1" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css?v=8">
+  <script>
+    /* Set theme before first paint to avoid a light/dark flash. Dark is the default. */
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.setAttribute('data-theme', stored || 'dark');
+    })();
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header" x-data="{ open: false }">
+    <nav class="nav container">
+      <a href="/" class="brand"><img class="brand-mark" src="/static/favicon.svg?v=1" width="34" height="34" alt="">Haxor<span class="brand-dot">44</span><span class="brand-star">*</span></a>
+
+      <ul class="nav-links" :class="{ 'is-open': open }">
+        <li><a href="/" {{if eq .Title "Home"}}aria-current="page"{{end}}>Home</a></li>
+        <li><a href="/projects" {{if eq .Title "Projects"}}aria-current="page"{{end}}>Projects</a></li>
+        <li><a href="/certifications" {{if eq .Title "Certifications"}}aria-current="page"{{end}}>Certifications</a></li>
+        <li><a href="/blog" {{if eq .Title "Blog"}}aria-current="page"{{end}}>Blog</a></li>
+        <li><a href="/contact" class="nav-cta" {{if eq .Title "Contact"}}aria-current="page"{{end}}>Hire me</a></li>
+      </ul>
+
+      <div class="nav-tools">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle color theme" type="button">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" @click="open = !open" :aria-expanded="open" aria-label="Toggle navigation" type="button">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    {{embed}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="/" class="brand"><img class="brand-mark" src="/static/favicon.svg?v=1" width="34" height="34" alt="">Haxor<span class="brand-dot">44</span><span class="brand-star">*</span></a>
+        <p class="footer-tagline">Reliable infrastructure,<br>automated pipelines,<br><em>calm</em> on-call rotations.</p>
+        {{template "socials"}}
+      </div>
+      <ul class="footer-links">
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/certifications">Certifications</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-land">
+      {{template "footer-landscape"}}
+      <div class="container footer-bottom">
+        <span>&copy; <span id="year"></span> Haxor44</span>
+        <span class="mono">powered by eaglebots</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/js/main.js?v=8" defer></script>
+</body>
+</html>

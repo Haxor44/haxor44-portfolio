@@ -1,0 +1,53 @@
+<section class="container page-head">
+  <p class="section-num">~/<span>contact</span></p>
+  <h1>Let's <em>talk</em><span class="accent">*</span></h1>
+  <p class="lead">Have a role, project, or question? Send a message and I'll get back to you.</p>
+</section>
+
+<section class="container section section-tight contact-grid">
+  <aside class="contact-aside">
+    <div class="contact-block">
+      <p class="label">Usually replies</p>
+      <p>within 1–2 days</p>
+    </div>
+    <div class="contact-block">
+      <p class="label">Open to</p>
+      <p>DevOps · Platform · SRE roles<br>Infrastructure consulting</p>
+    </div>
+    <div class="contact-block">
+      <p class="label">Status</p>
+      <p><span class="pulse-dot"></span> Available for new work</p>
+    </div>
+    <div class="contact-block">
+      <p class="label">Elsewhere</p>
+      <p><a href="https://github.com/Haxor44" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/ryan-matibo-malekya" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://medium.com/@evolmalek04" target="_blank" rel="noopener">Medium</a></p>
+    </div>
+  </aside>
+
+  <div>
+    {{if .Success}}<div class="alert alert-success">{{.Success}}</div>{{end}}
+    {{if .Error}}<div class="alert alert-error">{{.Error}}</div>{{end}}
+
+    <form method="POST" action="/contact" class="contact-form card">
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required value="{{.Form.Name}}" placeholder="Jane Doe">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required value="{{.Form.Email}}" placeholder="jane@company.com">
+        </div>
+      </div>
+      <div class="field">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" value="{{.Form.Subject}}" placeholder="Platform engineer role">
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Tell me a bit about what you're working on…">{{.Form.Message}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message {{template "arrow"}}</button>
+    </form>
+  </div>
+</section>

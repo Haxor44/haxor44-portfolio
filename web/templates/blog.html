@@ -1,0 +1,15 @@
+<section class="container page-head">
+  <p class="section-num">~/<span>blog</span></p>
+  <h1>Notes from the <em>pipeline</em></h1>
+  <p class="lead">Writing on cloud infrastructure, containers, and CI/CD — cross-posted from Medium.</p>
+</section>
+
+<section class="container section section-tight">
+  {{if .Articles}}
+  <div class="row-list">
+    {{range .Articles}}{{template "article-row" .}}{{end}}
+  </div>
+  {{else}}
+  <p class="empty-state"><span class="mono">$ ls ~/posts</span><br>No articles published yet.</p>
+  {{end}}
+</section>

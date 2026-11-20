@@ -1,0 +1,15 @@
+<section class="container page-head">
+  <p class="section-num">~/<span>projects</span></p>
+  <h1>Things I've <em>built</em> &amp; shipped</h1>
+  <p class="lead">A selection of infrastructure, automation, and application projects.</p>
+</section>
+
+<section class="container section section-tight">
+  {{if .Projects}}
+  <div class="card-grid">
+    {{range .Projects}}{{template "project-card" .}}{{end}}
+  </div>
+  {{else}}
+  <p class="empty-state"><span class="mono">$ kubectl get projects</span><br>No resources found — check back soon.</p>
+  {{end}}
+</section>

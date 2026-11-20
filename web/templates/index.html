@@ -1,0 +1,140 @@
+<section class="hero container">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="pulse-dot"></span> DevOps &amp; Cloud Infrastructure Engineer</p>
+    <h1>I build reliable infrastructure and the pipelines that <em>ship</em> it.</h1>
+    <p class="lead">
+      I design, automate, and operate cloud infrastructure — containers, Kubernetes,
+      CI/CD, and observability — so teams can ship faster with confidence.
+    </p>
+    <div class="hero-actions">
+      <a href="/projects" class="btn btn-primary">Explore projects</a>
+      <a href="/contact" class="btn btn-outline">Get in touch</a>
+    </div>
+    <div class="hero-socials">{{template "socials"}}</div>
+  </div>
+
+  <!-- A "constellation" of infrastructure: commits flow from CI to the cluster. -->
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 500 500" class="topology">
+      <g class="edges">
+        <path id="e1" d="M90 80 L200 150"/>
+        <path id="e2" d="M200 150 L255 255"/>
+        <path id="e3" d="M255 255 L170 350"/>
+        <path id="e4" d="M170 350 L265 440"/>
+        <path id="e5" d="M255 255 L390 315"/>
+        <path id="e6" d="M390 315 L435 190"/>
+        <path id="e7" d="M435 190 L370 75"/>
+        <path id="e8" d="M390 315 L265 440"/>
+      </g>
+      <g class="packets">
+        <circle r="3.5"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion></circle>
+        <circle r="3.5"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>
+        <circle r="3.5"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#e3"/></animateMotion></circle>
+        <circle r="3.5"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#e5"/></animateMotion></circle>
+        <circle r="3.5"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#e6"/></animateMotion></circle>
+        <circle r="3.5"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#e4"/></animateMotion></circle>
+      </g>
+      <g class="nodes">
+        <circle cx="90"  cy="80"  r="13"/>
+        <circle cx="200" cy="150" r="10"/>
+        <circle cx="255" cy="255" r="17" class="core"/>
+        <circle cx="170" cy="350" r="10"/>
+        <circle cx="265" cy="440" r="13"/>
+        <circle cx="390" cy="315" r="10"/>
+        <circle cx="435" cy="190" r="13"/>
+        <circle cx="370" cy="75"  r="8"/>
+      </g>
+      <g class="labels">
+        <text x="112" y="72">git push</text>
+        <text x="218" y="140">ci/cd</text>
+        <text x="282" y="250">k8s cluster</text>
+        <text x="72"  y="354">api</text>
+        <text x="186" y="476">postgres</text>
+        <text x="404" y="342">ingress</text>
+        <text x="455" y="196">cdn</text>
+        <text x="388" y="62">metrics</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<div class="marquee" aria-label="Tools I work with">
+  <div class="marquee-track">
+    {{template "tool-list"}}
+    {{template "tool-list" "hidden"}}
+  </div>
+</div>
+
+<section class="container section section-center">
+  <p class="section-num">01<span>*</span></p>
+  <h2>About me</h2>
+  <p class="about-text">
+    I'm an engineer who cares about the boring parts done well: reproducible
+    environments, <span class="hl">infrastructure as code</span>, fast feedback in CI, and
+    dashboards that tell you what's wrong <span class="hl-2">before</span> your users do.
+  </p>
+  <a href="/contact" class="btn btn-primary">Work with me</a>
+</section>
+
+<section class="container section">
+  <div class="section-head">
+    <p class="section-num">02<span>*</span></p>
+    <h2>Featured projects</h2>
+  </div>
+  {{if .FeaturedProjects}}
+  <div class="card-grid">
+    {{range .FeaturedProjects}}{{template "project-card" .}}{{end}}
+  </div>
+  {{else}}
+  <p class="empty-state"><span class="mono">$ kubectl get projects</span><br>No resources found — check back soon.</p>
+  {{end}}
+  <div class="section-foot"><a href="/projects" class="btn btn-primary">View all projects</a></div>
+</section>
+
+<section class="container section">
+  <div class="section-head">
+    <p class="section-num">03<span>*</span></p>
+    <h2>Latest writing</h2>
+  </div>
+  {{if .RecentArticles}}
+  <div class="card-grid">
+    {{range .RecentArticles}}{{template "article-card" .}}{{end}}
+  </div>
+  {{else}}
+  <p class="empty-state"><span class="mono">$ ls ~/posts</span><br>Nothing here yet.</p>
+  {{end}}
+  <div class="section-foot"><a href="/blog" class="btn btn-primary">View all articles</a></div>
+</section>
+
+{{if or .RecentCerts .InProgressCerts}}
+<section class="container section">
+  <div class="section-head">
+    <p class="section-num">04<span>*</span></p>
+    <h2>Certifications</h2>
+  </div>
+  {{if .InProgressCerts}}
+  <div class="cert-progress-row">
+    <span class="label"><span class="pulse-dot pulse-amber"></span> Currently working towards</span>
+    {{range .InProgressCerts}}<span class="tag tag-progress">{{.Name}}</span>{{end}}
+  </div>
+  {{end}}
+  <div class="cert-row">
+    {{range .RecentCerts}}
+    <div class="cert-chip">
+      {{if .BadgeIconURL}}<img src="{{.BadgeIconURL}}" alt="{{.Name}} badge" loading="lazy" width="44" height="44">{{else}}<span class="cert-fallback">✦</span>{{end}}
+      <div>
+        <strong>{{.Name}}</strong>
+        <span>{{.IssuingOrg}}</span>
+      </div>
+    </div>
+    {{end}}
+  </div>
+  <div class="section-foot"><a href="/certifications" class="link-arrow">All certifications <svg viewBox="0 0 24 24" width="20" height="20"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+</section>
+{{end}}
+
+<section class="container cta-band">
+  <h2>Let's build something <em>reliable</em><span class="accent">*</span></h2>
+  <p>Open to DevOps, platform, and SRE roles — and interesting infrastructure problems.</p>
+  <a href="/contact" class="btn btn-primary">Say hello</a>
+</section>
