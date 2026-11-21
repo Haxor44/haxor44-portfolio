@@ -31,7 +31,7 @@ jobs:
               uses: docker/login-action@v4
               with:
                 username: ${{ vars.DOCKER_USERNAME }}
-                password: ${{ secrets.DOCKER_TOKEN }}
+                password: ${{ secrets.DOCKER_PASSWORD }}
             
             - name: Setup qemu
               uses: docker/setup-qemu-action@v4
