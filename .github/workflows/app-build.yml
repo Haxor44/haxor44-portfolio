@@ -26,12 +26,13 @@ jobs:
     docker:
         runs-on: ubuntu-latest
         needs: build
+        environment: env
         steps:
             - name: Login to Dockerhub
               uses: docker/login-action@v4
               with:
                 username: ${{ vars.DOCKER_USERNAME }}
-                password: ${{ secrets.DOCKER_PASSWORD }}
+                password: ${{ secrets.DOCKER_TOKEN }}
             
             - name: Setup qemu
               uses: docker/setup-qemu-action@v4

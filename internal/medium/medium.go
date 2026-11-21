@@ -62,7 +62,7 @@ func Fetch(ctx context.Context, client *http.Client, username string) ([]Post, e
 	if err != nil {
 		return nil, fmt.Errorf("medium: fetch feed: %w", err)
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 
 	if resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("medium: fetch feed: unexpected status %d", resp.StatusCode)
