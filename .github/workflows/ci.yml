@@ -1,0 +1,25 @@
+name: Workflow Orchestration
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+    app-lint-format-check:
+        uses: ./.github/workflows/app-lint-format-check.yml
+    app-build:
+        uses: ./.github/workflows/app-build.yml
+
+    pipeline-success:
+        needs: [app-lint-format-check, app-build]
+        runs-on: ubuntu-latest
+        if: always()
+        steps:
+            - name: Pipeline Success
+              if: "!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'cancelled')"
+              run: echo "Pipeline completed successfully."
+            - name: Pipeline Failure
+              if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+              run: echo "Pipeline failed or was cancelled."
