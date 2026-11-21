@@ -11,6 +11,7 @@ jobs:
         uses: ./.github/workflows/app-lint-format-check.yml
     app-build:
         uses: ./.github/workflows/app-build.yml
+        secrets: inherit
 
     pipeline-success:
         needs: [app-lint-format-check, app-build]
