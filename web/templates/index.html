@@ -8,7 +8,7 @@
     </p>
     <div class="hero-actions">
       <a href="/projects" class="btn btn-primary">Explore projects</a>
-      <a href="/contact" class="btn btn-outline">Get in touch</a>
+      <a href="#cv" class="btn btn-outline">View CV</a>
     </div>
     <div class="hero-socials">{{template "socials"}}</div>
   </div>
@@ -132,6 +132,29 @@
   <div class="section-foot"><a href="/certifications" class="link-arrow">All certifications <svg viewBox="0 0 24 24" width="20" height="20"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
 </section>
 {{end}}
+
+<section class="container section" id="cv">
+  <div class="section-head">
+    <p class="section-num">05<span>*</span></p>
+    <h2>Curriculum <em>vitae</em></h2>
+  </div>
+  <div class="card cv-card">
+    <a class="cv-preview" href="/static/cv/Ryan-Matibo-Malekya-CV.pdf" target="_blank" rel="noopener" aria-label="Open CV in a new tab">
+      <img src="/static/cv/cv-preview.jpg" alt="First page of the CV" width="495" height="640" loading="lazy">
+    </a>
+    <div class="cv-body">
+      <p class="mono cv-file">Ryan-Matibo-Malekya-CV.pdf <span>· 2 pages · PDF</span></p>
+      <h3>The full picture, on two pages.</h3>
+      <p>Experience, projects, certifications and skills across cloud infrastructure, containers and CI/CD. Open it in your browser or save a copy.</p>
+      <div class="hero-actions">
+        <a href="/static/cv/Ryan-Matibo-Malekya-CV.pdf" target="_blank" rel="noopener" class="btn btn-primary">View CV {{template "arrow"}}</a>
+        <a href="/static/cv/Ryan-Matibo-Malekya-CV.pdf" download class="btn btn-outline">Download PDF
+          <svg class="arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="container cta-band">
   <h2>Let's build something <em>reliable</em><span class="accent">*</span></h2>
