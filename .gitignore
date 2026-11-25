@@ -19,6 +19,7 @@
 *.md
 !README.md
 *.pdf
+!web/static/cv/*.pdf
 
 # Machine-specific compose overrides (e.g. the 5433 port fix)
 docker-compose.override.yml
